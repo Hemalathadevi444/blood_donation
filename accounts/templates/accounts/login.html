@@ -1,0 +1,49 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+	<style type="text/css">
+		body{
+			background-image: url('{% static "image/b2.jpg" %}');
+			background-repeat: no-repeat;
+        background-size: cover;
+		}
+	</style>
+   
+  </head>
+  <body background="blood.jpg" style="background-repeat:no-repeat; background-size:cover">
+    {% include "accounts/navbar.html" %}
+    {% block content %}
+<br><br><br><br>
+<div class="col-md-6 offset-md-3" style="padding: 100px ;border:2px solid black; ">
+	<div >
+	<form method="POST" >
+		{% csrf_token %}
+		<div >
+			<h2 class="text-center">Login</h2>
+		</div>
+	  <div class="form-group" style="border:2px solid black; ">
+	  		    
+	    <input type="text" class="form-control"  placeholder="Enter Username" name="username">
+	    
+	  </div>
+	  <div class="form-group" style="border:2px solid black; " >
+	    
+	    <input type="password" class="form-control"  placeholder="Enter Password" name="password">
+	  </div>
+	  
+	  <button type="submit" class="btn btn-secondary">Login</button>
+	</form>
+	<p style="text-align: center;">Don't have an account? <a style="text-decoration: none;" href="/register">Register Now</a></p>
+
+</div> 
+</div>
+
+{% endblock %}
+
+
+
+
+  </body>
+</html>

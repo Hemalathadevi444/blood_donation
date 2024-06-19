@@ -1,0 +1,56 @@
+{% extends 'accounts/user_base.html' %}
+{% block content %}
+<br><br><br>
+<div class="col-md-6 offset-md-3"><a href="{% url 'delete' %}" class="btn btn-outline-danger">Delete Request</a></div>
+
+<br><br>
+<div class="container">
+    {% if requests %}
+        {% if accepted_requests %}
+
+    
+        <table class="table table-light table-hover table-bordered table-striped">
+            <thead class="bg-dark">
+                <tr>
+                    <th scope="col" style="color: rgb(192, 192, 192);"> Name</th>
+                    
+                    
+                    <th scope="col" style="color: rgb(192, 192, 192);">Phone</th>
+                    <th scope="col" style="color: rgb(192, 192, 192);">City</th>
+                    <th scope="col" style="color: rgb(192, 192, 192);">Blood Group</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                {% for t in accepted_requests %}
+                <tr>
+                    <td> {{t.name}}</td>
+                    
+                    <td>{{t.phone}}</td>
+                    <td>{{t.city}}</td>
+                    <td>{{t.blood_group}}</td>
+                    
+                    
+                    
+                </tr>
+                {% endfor %}
+
+            </tbody>
+        
+        </table>
+        {% else %}
+        <h1 style=" text-align: center;margin-top: 100px;">You have no accepted requests</h1>
+
+        {% endif %}
+        {% else %}
+        <h1 style=" text-align: center;margin-top: 100px;">You have not raised request</h1>
+
+        {% endif %}
+        
+</div>
+
+
+
+
+
+{% endblock content %}

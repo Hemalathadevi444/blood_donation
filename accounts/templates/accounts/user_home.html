@@ -1,0 +1,15 @@
+{% extends 'accounts/user_base.html' %}
+{% block content %}
+{% load static %}
+
+<h1 style=" text-align: center;margin-top: 100px;">Welcome {{user.first_name}}</h1>
+<style type="text/css">
+    body{
+        background-image: url('{% static "image/homepage.jpg" %}');
+        background-repeat: no-repeat;
+        background-size:cover;
+    }
+</style>
+
+{% endblock %}
+

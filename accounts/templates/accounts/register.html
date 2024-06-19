@@ -1,0 +1,75 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+	<link rel="stylesheet" href="sss.css">
+	<style type="text/css">
+		body{
+			background-image: url('{% static "image/i.jpg" %}');
+			background-repeat: no-repeat;
+        	background-size: cover;
+		}
+	</style>
+  </head>
+  <body >
+    {% include "accounts/navbar.html" %}
+<div >   
+<br><br><br><br> 
+	<div style="border: 2px solid black;width: 675px;margin-left: 337px;background-color: bisque;color:black">
+<h2 class="text-center">Register</h2>
+</div>
+<div class="col-md-6 offset-md-3" style="border: 2px solid black;background-color: bisque;">
+	<form  method="POST">
+		{% csrf_token %}
+	  <div class="form-group">
+		<label for="usernsme" class="label-title">User_name:</label>	    
+	    <input type="text" class="form-control" name="username" id=" username" placeholder="Enter Username" >  
+	  </div>
+	  <div class="form-group">
+	    <label for="first_name" class="label-title">First_name:</label>
+	    <input type="text" class="form-control" name="first_name" id="first_name"  placeholder="Enter First Name" >
+	  </div>
+      <div class="form-group">
+	    <label for="last_name" class="label-title">Last_name:</label>
+	    <input type="text" class="form-control"  name="last_name" id="last_name" placeholder="Enter Last Name" >
+	  </div>
+      <div class="form-group">
+	    <label for="email" class="label-title">Email:</label>
+	    <input type="email" class="form-control" name="email" id="email" placeholder="Enter Email ID" >
+	  </div>
+      <div class="form-group">
+	    <label for="phone" class="label-title">Phone_No:</label>
+	    <input type="tel" class="form-control" name="phone" id="phone" placeholder="Enter Contact Number" >
+	  </div>
+      <div class="form-group">
+	    <label for="city" class="label-title">City:</label>
+	    <input type="text" class="form-control" name="city" id="city"  placeholder="Enter City" >
+	  </div> 
+      <div class="form-group">
+	    <label for="blood_group" class="label-title">Blood_group:</label>
+	    <select class="form-control" name="blood_group" required>
+			<option>A+</option>
+            <option>A-</option>
+            <option>B+</option>
+            <option>B-</option>
+            <option>O+</option>
+            <option>O-</option>
+            <option>AB+</option>
+            <option>AB-</option>
+            </select>
+	  </div>
+      <div class="form-group">
+	    <label for="password" class="label-title">Password:</label>
+	    <input type="password" class="form-control" name="password"id ="password" placeholder="Enter Password" >
+	  </div>
+      <div class="form-group">
+	    <label for="confirm_password" class="label-title">Confirm_password:</label>
+	    <input type="password" class="form-control" name="confirm_password"id ="confirm_password" placeholder="Confirm Password" >
+	  </div>
+	  <button type="submit" class="btn btn-secondary" style="text-align:center;">Submit</button>
+	</form>
+	<p style="text-align: center;">Already have an account? <a style="text-decoration: none;" href="/login">Login Now</a></p>
+</div>
+</div>
+  </body>
+</html>

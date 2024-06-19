@@ -1,0 +1,16 @@
+{% extends 'accounts/user_base.html' %}
+{% block content %}
+{% load static %}
+<br><br><br>
+<div class="col-md-6 offset-md-3" style="background-color: rgba(35, 135, 142, 0.308);text-align: center;border: 1px solid black;padding: 6px;"><a href="/make_request" class="btn">Request</a></div>
+<br>
+<div  class="col-md-6 offset-md-3" style="background-color:  rgba(35, 135, 142, 0.308);text-align: center;border: 1px solid black;padding: 6px;"><a href="/accepted_requests" class="btn">Accepted Requests</a></div>
+</div>
+<style type="text/css">
+    body{
+        background-image: url('{% static "image/homepage.jpg" %}');
+        background-repeat: no-repeat;
+        background-size:cover;
+    }
+</style>
+{% endblock content %}
